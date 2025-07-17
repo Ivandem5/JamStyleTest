@@ -75,6 +75,12 @@ public class StepperControl : MonoBehaviour
         _currentValue = resetToMin ? minValue : Mathf.Clamp(_currentValue, minValue, maxValue);
         RefreshUI();
     }
+
+    public void SetStep(int newStep)
+    {
+        _currentValue = Mathf.Clamp(newStep, minValue, maxValue);
+        RefreshUI();
+    }
     
     public int GetValue() => _currentValue;
 }
